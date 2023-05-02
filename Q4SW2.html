@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<body class="bg-dark text-center text-light">
+	<title>Q4 Seatwork 2</title>
+	<style type="text/css">
+		th, td {
+			padding: 0px;
+		}
+		body{
+			margin: 50px
+		}
+
+
+
+	</style>
+</head>
+<body class="text-center">
+	<h1>Temperature Conversation</h1>
+	<p id="DT"></p>
+
+	<script>
+		const D = new Date();
+		document.getElementById ('DT').innerHTML = D;
+
+	</script>
+
+	<script type="text/javascript">
+		function Compute(){
+			let num1 = document.getElementById("num1").value;
+			let part = Number(num1 - 32);
+			let product = Number(part * 5/9)
+
+			window.alert("Fahrenheit to Celsius: " + product);
+			document.getElementById("text").innerHTML + product;
+		}
+	</script>
+
+	<table text-dark border="3">
+		<tr>
+			<td>Fahrenheit (F)</td>
+			<td>Celcius (C)</td>
+		</tr>
+		<tr>
+			<td>
+				<form>
+					<input type="text" id="num1"><br><br>
+					<button type="submit" onclick="Compute()" class="btn btn-light btn-block">Compute</button>
+				</form>
+			</td>
+			
+</body>
+</html>
