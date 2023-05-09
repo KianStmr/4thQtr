@@ -1,0 +1,65 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		img{
+			width:  150px;
+		}
+		#fig1,#fig2{
+			width:  500px;
+		}
+	</style>
+	<title>Q4 Exercise 5</title>
+</head>
+<body>
+	<div class="container mt-3">
+	<h2>How does a light bulb "light up"?</h2>
+	<p>The lightbulb is a very thin filament of hard-to-melt metal ( tungsten, usually ) encased in a glass bulb filled with inert gases so that the filament doesn't oxidise and disintegrate. The electricity causes the wire to glow and a portion of that energy is turned into light.</p>
+	<audio id="audio" src="turnonlights.mp3"></audio>
+		<button class="btn btn-success" onmouseover="On()" onmouseout="Off()">SWITCH ON</button>
+		<img src="switchOFF.png" id="Bulb">
+
+	<h2>The Ohm's Law Equation</h2>
+	<p>Ohm's law states that the current through a conductor between two points is directly proportional to the voltage across the two points. Introducing the constant of proportionality, the resistance, one arrives at the usual mathematical equation that describes this relationship: <kbd>Voltage(E) = Current(I)Resistance(R)</kbd></p>
+	<img src="fig1.PNG" id="fig2">
+	<p>Calculate the amount of current (I) in a circuit, given values of voltage (E) and resistance (R): <kbd>I = E/R </kbd></p>
+	<div class="row">
+		<div class="col-6">
+			<img src="fig2.PNG" id="fig2"><br>
+		</div>
+
+		<div class="col-6 mt-5">
+			<p> Enter Voltage (E):<input type="text" id="V" class="form-control"><br></p>
+			<p> Enter Resistance (R):<input type="text" id="R" class="form-control"><br></p>
+			<input type="submit" value="COMPUTE" class="btn btn-success" 
+			onclick="Compute()">
+			<h4 id="Output"></p>
+	</div>
+
+		<script type="text/javascript">
+			function On(){
+				document.getElementById('Bulb').src = "switchON.png";
+				document.getElementById('audio').play();
+			}
+			function Off(){
+				document.getElementById('Bulb').src = "SwitchOFF.png";
+				document.getElementById('audio').pause();
+			}
+			function Compute(){
+				 let Voltage = document.getElementById("V").value;
+				 let Resistance = document.getElementById("R").value;
+				 let Current =Voltage/Resistance;
+				 document.getElementById('Output').innerHTML = "The Current (I) is: " + Current;
+
+			}
+		</script>
+
+		<p>Sources:<br>
+		<a href="https://www.bbc.com/future/article/20131101-how-does-a-lightbulb-work#:~:text=Essentially%2C%20the%20lightbulb%20is%20a,energy%20is%20turned%20into%20light.">https://www.bbc.com/future/article/20131101-how-does-a-lightbulb-work#:~:text=Essentially%2C%20the%20lightbulb%20is%20a,energy%20is%20turned%20into%20light.</a></p>
+		<p><a href="https://en.wikipedia.org/wiki/Ohm%27s_law">https://en.wikipedia.org/wiki/Ohm%27s_law</a></p>
+	</div>
+</body>
+</html>
