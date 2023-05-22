@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Project B</title>
+
+
+  <style>
+    .container {
+      margin-top: 70px;
+    }
+  </style>
+
+
+</head>
+<body class="text-dark bg-light">
+  <div class="container">
+    <h1 class="text-center">Length Calculator</h1>
+
+
+    <div class="form-group">
+    <div class="form-group">
+      <input type="number" id="inputMeters" class="form-control" step="any" placeholder="Meters">
+    </div>
+    <div class="form-group">
+    <input type="number" id="inputCentimeters" class="form-control" step="any" placeholder="Centimeters">
+    </div>
+
+    
+    <div style="text-align:center;">
+    <button class="btn btn-primary" onclick="convertCentimetersToMeters()">Convert to Meters</button>
+    <button class="btn btn-primary" onclick="convertMetersToCentimeters()">Convert to Centimeters</button>
+    <div id="result"></div>
+
+
+  <script>
+    function convertCentimetersToMeters() {
+      var centimeters = document.getElementById('inputCentimeters').value;
+      if (!centimeters) {
+        document.getElementById('result').innerHTML = "Invalid input!";
+        return;
+      }
+      var meters = centimeters * 0.01;
+      document.getElementById('result').innerHTML = centimeters + ' centimeters is equal to ' + meters + ' meters.';
+    }
+
+    function convertMetersToCentimeters() {
+      var meters = document.getElementById('inputMeters').value;
+      if (!meters) {
+        document.getElementById('result').innerHTML = "Invalid input!";
+        return;
+      }
+      var centimeters = meters * 100;
+      document.getElementById('result').innerHTML = meters + ' meters is equal to ' + centimeters + ' centimeters.';
+    }
+  </script>
+</body>
+</html>
